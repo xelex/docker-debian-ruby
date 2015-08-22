@@ -10,7 +10,7 @@ Put your public keys into keys/ssh.pub
 
 ### install
 
-install [Docker](https://www.docker.io/gettingstarted/#h_installation)
+install [Docker](https://docs.docker.com/)
 
 ```
 git clone https://github.com/xelex/docker-debian-ruby
