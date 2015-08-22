@@ -8,8 +8,8 @@ RUN apt-get update
 RUN apt-get install -y --force-yes apt-utils
 RUN apt-get install -y --force-yes openssh-server
 RUN mkdir /var/run/sshd
-RUN echo 'root:screencast' | chpasswd
-RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+ADD keys/ssh.pub /tmp/ssh.pub
+RUN cat /tmp/ssh.pub >> /root/.ssh/authorized_keys && rm -f /tmp/ssh.pub
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 RUN echo "export VISIBLE=now" >> /etc/profile
 EXPOSE 22
