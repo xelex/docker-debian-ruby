@@ -4,6 +4,10 @@ a Dockerfile for ruby + rvm + bundler set on stable Debian (with SSH)
 
 ## how to
 
+### prepare
+
+Put your public keys into keys/ssh.pub
+
 ### install
 
 install [Docker](https://www.docker.io/gettingstarted/#h_installation)
